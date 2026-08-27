@@ -16,4 +16,8 @@
     <PackageReference Include="MySql.Data.EntityFramework" Version="26.7.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DataModel\DataModel.csproj" />
+  </ItemGroup>
+
 </Project>

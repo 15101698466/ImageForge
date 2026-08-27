@@ -1,6 +1,6 @@
 ﻿namespace DataOperation
 {
-	public class Class1
+	public class ProcessTaskOperation
 	{
 
 	}
