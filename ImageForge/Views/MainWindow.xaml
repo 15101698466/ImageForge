@@ -2,9 +2,16 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
-        prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525" >
+        prism:ViewModelLocator.AutoWireViewModel="True" WindowStyle="None" WindowStartupLocation="CenterScreen"
+          Height="1080" Width="1920" >
     <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <ContentControl  prism:RegionManager.RegionName="TopRegion" />
+        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="ContentRegion" />
+        <ContentControl Grid.Row="2" prism:RegionManager.RegionName="BottomRegion" />
     </Grid>
 </Window>

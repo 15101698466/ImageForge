@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using ImageForge.ViewModels;
 using ImageForge.Views;
 using Prism.Ioc;
 
@@ -16,7 +17,9 @@ namespace ImageForge
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
-        }
+            containerRegistry.RegisterForNavigation<TopView,TopViewModel>("TopView");
+            containerRegistry.RegisterForNavigation<ContentView,ContentViewModel>("ContentView");
+            containerRegistry.RegisterForNavigation<BottomView,BottomViewModel>("BottomView");
+		}
     }
 }
