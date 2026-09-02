@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="ImageForge.Views.CloseAPPView"
+﻿<UserControl x:Class="ImageForge.Views.MessageView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ImageForge.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="450">
+             d:DesignHeight="300" d:DesignWidth="650">
     <Border Background="White" CornerRadius="5">
     <Grid Background="White" Margin="10">
         <Grid.RowDefinitions>

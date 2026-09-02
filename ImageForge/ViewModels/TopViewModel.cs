@@ -8,6 +8,9 @@ using Prism.Navigation.Regions;
 using Prism.Events;
 using Prism.Dialogs;
 using Prism.Commands;
+using System.Threading;
+using Microsoft.Win32;
+using ImageForge.Common;
 
 namespace ImageForge.ViewModels
 {
@@ -17,16 +20,45 @@ namespace ImageForge.ViewModels
 		private IEventAggregator eventAggregator;
 
 		private IDialogService dialogService;
-		
 
-		public DelegateCommand CloseCommnd { get; set; }
+		private CancellationTokenSource cancellationToken;
+
+		public DelegateCommand CloseCommand { get; set; }
+
+		public DelegateCommand OpenFileCommand { get; set; }
+
+		public DelegateCommand StartCommand { get; set; }
+
+		public DelegateCommand StopCommand { get; set; }
+
 		public TopViewModel(IEventAggregator aggregator,IDialogService  dialog)
 		{
 			this.eventAggregator = aggregator;
 			this.dialogService = dialog;
-			CloseCommnd = new DelegateCommand(CloseWindow);
+			CloseCommand = new DelegateCommand(CloseWindow);
+			OpenFileCommand = new DelegateCommand(OpenFile);
+			StartCommand = new DelegateCommand(Start);
+			StopCommand = new DelegateCommand(Stop);
 
+		}
 
+		private void Stop()
+		{  
+			SendMessage("Content", "Stop");
+		}
+
+		private void Start()
+		{ 
+
+			SendMessage("Content", "Start");
+		}
+
+		private void OpenFile()
+		{
+			OpenFolderDialog openFolderDialog = new OpenFolderDialog();
+			
+			var result =  openFolderDialog.ShowDialog(); 
+			SendMessage("Content", openFolderDialog.FolderName);
 		}
 
 		private void CloseWindow()
@@ -34,7 +66,7 @@ namespace ImageForge.ViewModels
 			 DialogParameters keyValues = new DialogParameters();
 			keyValues.Add("message","是否关闭程序");
 
-			dialogService.ShowDialog("CloseAPPView", keyValues, 
+			dialogService.ShowDialog("MessageView", keyValues, 
 				callback:(result)=>
 				{
 					if (result.Result == ButtonResult.Yes)
@@ -61,6 +93,14 @@ namespace ImageForge.ViewModels
 		public void OnNavigatedTo(NavigationContext navigationContext)
 		{
 			  
+		}
+
+		public void SendMessage(string target, string message)
+		{
+			Dictionary<string, string> keyValues = new Dictionary<string, string>();
+			keyValues.Add("Target", target);
+			keyValues.Add("Message", message);
+			eventAggregator.GetEvent<EventMessage>().Publish(keyValues);
 		}
 	}
 }

@@ -18,9 +18,9 @@ namespace ImageForge.Views
 	/// <summary>
 	/// CloseAPPView.xaml 的交互逻辑
 	/// </summary>
-	public partial class CloseAPPView : UserControl
+	public partial class MessageView : UserControl
 	{
-		public CloseAPPView()
+		public MessageView()
 		{
 			InitializeComponent();
 		}

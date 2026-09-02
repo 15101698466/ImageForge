@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True" WindowStyle="None" WindowStartupLocation="CenterScreen"
-          Height="1080" Width="1920" >
+          Height="1040" Width="1960" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />

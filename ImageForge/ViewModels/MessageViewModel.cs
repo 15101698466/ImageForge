@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ImageForge.ViewModels
 {
-	public class CloseAPPViewModel :BindableBase, IDialogAware
+	public class MessageViewModel :BindableBase, IDialogAware
 	{
 
 		private string strTitle;
@@ -24,9 +24,9 @@ namespace ImageForge.ViewModels
 		public DelegateCommand YesCommand { get; set; }
 		public DelegateCommand CancelCommnd {  get; set; }
 
-		public  CloseAPPViewModel() 
+		public MessageViewModel() 
 		{
-			YesCommand = new DelegateCommand(CloseWindow);
+			YesCommand = new DelegateCommand(YesClick);
 			CancelCommnd = new DelegateCommand(CancelWindow);
 		}
 
@@ -36,7 +36,7 @@ namespace ImageForge.ViewModels
 			RequestClose.Invoke(result);
 		}
 
-		private void CloseWindow()
+		private void YesClick()
 		{
 
 			var result = new DialogResult(ButtonResult.Yes);

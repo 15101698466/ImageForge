@@ -18,11 +18,11 @@
             <TextBlock Text="图像处理"  Style="{StaticResource TopText}"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Style="{StaticResource btnStyle}">选择文件夹</Button>
-            <Button Style="{StaticResource btnStyle}">开始处理</Button>
-            <Button Style="{StaticResource btnStyle}">停止全部</Button>
+            <Button Style="{StaticResource btnStyle}" Command="{Binding OpenFileCommand}">选择文件夹</Button>
+            <Button Style="{StaticResource btnStyle}" Command="{Binding StartCommand}">开始处理</Button>
+            <Button Style="{StaticResource btnStyle}" Command="{Binding StopCommand}">停止全部</Button>
         </StackPanel>
 
-        <Button Grid.Column="3" Command="{Binding  CloseCommnd}" Style="{StaticResource btnStyle}" > 关闭界面</Button>
+        <Button Grid.Column="3" Command="{Binding  CloseCommand}" Style="{StaticResource btnStyle}" > 关闭界面</Button>
     </Grid>
 </UserControl>

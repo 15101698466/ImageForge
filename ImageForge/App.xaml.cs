@@ -20,7 +20,7 @@ namespace ImageForge
             containerRegistry.RegisterForNavigation<TopView,TopViewModel>("TopView");
             containerRegistry.RegisterForNavigation<ContentView,ContentViewModel>("ContentView");
             containerRegistry.RegisterForNavigation<BottomView,BottomViewModel>("BottomView");
-            containerRegistry.RegisterForNavigation<CloseAPPView,CloseAPPViewModel>("CloseAPPView");
+            containerRegistry.RegisterForNavigation<MessageView,MessageViewModel>("MessageView");
 		}
     }
 }

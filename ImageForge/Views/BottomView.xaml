@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ImageForge.Views"
+             xmlns:controls="clr-namespace:ImageForge.CustomControl"
              mc:Ignorable="d" 
               >
     <Grid>
@@ -13,5 +14,7 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
+
+        <controls:CircularProgressBar Width="100" Height="100"/>
     </Grid>
 </UserControl>
